@@ -1,3 +1,5 @@
+// Kevin Curran
+
 #define outPin 13
 #define inPin 8
 
