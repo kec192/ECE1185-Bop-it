@@ -6,6 +6,7 @@
 void setup() {
   // put your setup code here, to run once:
   pinMode(outPin, OUTPUT);
+  pinMode(inPin, INPUT);
 }
 
 void loop() {
