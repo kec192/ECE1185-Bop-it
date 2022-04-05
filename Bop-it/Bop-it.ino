@@ -2,6 +2,14 @@
 #define button
 #define lever 
 #define scrollWheel
+
+//define constants
+#define C5 523
+#define E5 659
+#define G5 784
+#define C6 1047
+#define timer 500;
+
 //function to return random number between 0-2
 int randNoiseGen()
 {
@@ -19,6 +27,7 @@ bool checkInput(sel, input)
     return false;
   }
 }
+
 void(decreaseTime)
 {
   
@@ -27,12 +36,7 @@ void(decreaseTime)
 void setup() 
 {
   // put your setup code here, to run once:
-  float C5 = 523
-  float E5 = 659
-  float G5 = 784
-  float C6 = 1047
   int sel, score; 
-  int timer = 500;
   bool cor;
 }
 
@@ -87,7 +91,7 @@ void loop()
   }
   if(cor)
   {
-    decreaseTime();
+//    decreaseTime();
     blinkLED(green);
   else
   {
