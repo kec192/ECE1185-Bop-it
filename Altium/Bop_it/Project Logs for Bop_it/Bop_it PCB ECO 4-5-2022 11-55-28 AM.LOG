@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=ProgramHeader Old Footprint=HDR1X6 New Footprint=HDR2X3
+Change Component Comment : Designator=ProgramHeader Old Comment=Header 6 New Comment=Header 3X2

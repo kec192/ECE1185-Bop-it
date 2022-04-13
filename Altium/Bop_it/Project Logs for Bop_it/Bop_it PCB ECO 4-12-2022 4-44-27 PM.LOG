@@ -1,0 +1,28 @@
+Removed Pin From Net: NetName=PB1 Pin=Q1-2
+Removed Pin From Net: NetName=GND Pin=Q1-3
+Removed Pin From Net: NetName=Power Pin=R7-1
+Removed Pin From Net: NetName=GND Pin=Speaker-2
+Removed Member From Class: ClassName=Bop_it Member=C4
+Removed Member From Class: ClassName=Bop_it Member=Q1
+Change component parameters: Designator = "C2" ("C2"); Footprint = "RAD-0.3"; UniqueID = "\MNHVQNNT" ("\MNHVQNNT")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "22pF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C3" ("C3"); Footprint = "RAD-0.3"; UniqueID = "\SXTADUDV" ("\SXTADUDV")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "Radial Cap, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "22pF"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=R7-2
+Added Pin To Net: NetName=PB1 Pin=Speaker-2
+Added Pin To Net: NetName=NetR7_1 Pin=R7-1
+Added Pin To Net: NetName=NetR7_1 Pin=Speaker-1
+Added Net: Name=NetR7_1
+Added Room: Name=Bop_it
