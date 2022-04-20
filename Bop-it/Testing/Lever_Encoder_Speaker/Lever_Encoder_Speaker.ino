@@ -53,7 +53,16 @@ void loop() {
 }
 
 void playSong() {
-  for( int i = 0; i < 4; i++ ) {
+  int i;
+  for( i = 0; i < 4; i++ ) {
+    tone(SpeakerPin, speakerArray[i], 150);
+    delay(200);
+  }
+  for( i = 3; i >=0; i-- ) {
+    tone(SpeakerPin, speakerArray[i], 150);
+    delay(200);
+  }
+  for( i = 0; i < 4; i++ ) {
     tone(SpeakerPin, speakerArray[i], 150);
     delay(200);
   }
