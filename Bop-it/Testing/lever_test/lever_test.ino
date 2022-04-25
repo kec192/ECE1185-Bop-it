@@ -1,10 +1,12 @@
-#define outPin 13
-#define inPin 8
+#define outPin1 6
+#define outPin2 7
+#define inPin 0
 
 void setup() {
   // put your setup code here, to run once:
 
-  pinMode(outPin, OUTPUT);
+  pinMode(outPin1, OUTPUT);
+  pinMode(outPin2, OUTPUT);
   pinMode(inPin, INPUT);
   
 }
@@ -12,10 +14,12 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  if(digitalRead(inPin) == LOW) {
-    digitalWrite(outPin, HIGH);
+  if(digitalRead(inPin) == HIGH) {
+    digitalWrite(outPin1, HIGH);
+    digitalWrite(outPin2, HIGH);
   } else {
-    digitalWrite(outPin, LOW);  
+    digitalWrite(outPin1, LOW);
+    digitalWrite(outPin2, LOW);  
   }
 
 }

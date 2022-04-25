@@ -18,7 +18,8 @@ void setup() {
 //  pinMode(encoderPin1, INPUT); 
   pinMode(encoderPin, INPUT);
 
-  pinMode(outPin, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
 
 //  digitalWrite(encoderPin1, HIGH); //turn pullup resistor on
   digitalWrite(encoderPin, HIGH); //turn pullup resistor on
@@ -33,7 +34,8 @@ void setup() {
 void loop(){ 
   //Do stuff here
 
-  digitalWrite(outPin, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
 
 //  Serial.println(encoderValue);
   delay(100); //just here to slow down the output, and show it will work  even during a delay
@@ -41,7 +43,9 @@ void loop(){
 
 
 void updateEncoder(){
-  digitalWrite(outPin, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, HIGH);
+  delay(100);
 //  int MSB = digitalRead(encoderPin1); //MSB = most significant bit
 //  int LSB = digitalRead(encoderPin2); //LSB = least significant bit
 //

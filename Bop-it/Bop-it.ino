@@ -14,6 +14,8 @@
 #define G5 784
 #define C6 1047
 
+#define initTime 5000
+
 enum LEDColor {
   red,
   green
@@ -30,12 +32,12 @@ int startupTuneSize = sizeof(startupTune) / sizeof(startupTune[0]);
 
 int sel, score;
 unsigned long timer; 
-bool cor;
+bool cor, prevLeverPos;
 
 void setup() 
 {
 
-  timer = 2500;
+  timer = initTime;
   score = 0;
   
   /*** Encoder Setup ***/
@@ -44,11 +46,20 @@ void setup()
 
   /*** Lever Setup ***/
   pinMode(lever, INPUT);
-  digitalWrite(lever, HIGH); //turn pullup resistor on
+//  digitalWrite(lever, HIGH); //turn pullup resistor on
+  switch(digitalRead(lever))
+  {
+    case HIGH:
+      prevLeverPos = 1;
+      break;
+    case LOW:
+    default:
+      prevLeverPos = 0;
+  }
 
   /*** Button Setup ***/
   pinMode(button, INPUT);
-  digitalWrite(button, LOW); //turn pulldown resistor on
+//  digitalWrite(button, LOW); //turn pulldown resistor on
 
   // LED setup
   pinMode(greenLED, OUTPUT);
@@ -102,7 +113,7 @@ void loop()
       return;
   }
 
-  delay(200);
+//  delay(200);
 
   unsigned long startLoop = millis();
   unsigned long deltaTime = 0;
@@ -118,8 +129,9 @@ void loop()
       break;
     }
     //if lever pulled
-    else if(digitalRead(lever) == HIGH)
+    else if(digitalRead(lever) != prevLeverPos)
     {
+      prevLeverPos = digitalRead(lever);
       cor = checkInput(sel,1);
       break;
     }
@@ -137,13 +149,17 @@ void loop()
   if(cor)
   {
     score += 1;
-    timer *= 0.9;
+    timer *= 0.95;
     blinkLED(green);
   }
   else
   {
     blinkLED(red);
     delay(100);
+    gameOver();
+  }
+
+  if(score == 5) {
     gameOver();
   }
 
@@ -211,7 +227,22 @@ void gameOver()
   }
 
   score = 0;
+  timer = initTime;
   
   // hang until circuit is reset
-//  while(1);
+  while(1)
+  {
+    unsigned long startLoop = millis();
+    unsigned long deltaTime = 0;
+    while (digitalRead(button) == HIGH) 
+    {
+      deltaTime = millis() - startLoop;
+      if (deltaTime >= 2500)
+      {
+        playStartupTune();
+        return;
+      }
+    }
+    
+  }
 }
